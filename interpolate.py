@@ -2,6 +2,7 @@ import xarray as xr
 import pandas as pd
 import numpy as np
 from os.path import exists
+import pickle
 
 datavel=pd.read_pickle(r'DataVel')
 times=datavel['timevel']
@@ -39,8 +40,6 @@ datavel['vtotal_int']=np.array(vtotal_int)
 datavel['utotal_int']=np.array(utotal_int)
 datavel['vstk_int']=np.array(vstk_int)
 datavel['ustk_int']=np.array(ustk_int)
-
-import pickle
 
 # Store data (serialize)
 with open('Datavel_int.pickle', 'wb') as handle:
